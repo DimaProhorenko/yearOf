@@ -2,7 +2,12 @@
 
 .header {
     padding-block: 2rem;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: abs.$brand-green;
+    z-index: 1000;
 
     &__nav {
         display: flex;

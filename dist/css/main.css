@@ -43,6 +43,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "MaisonNeue-Black", Helvetica, Arial, sans-serif;
+  line-height: 1;
 }
 
 /* A elements that don't have a class get default styles */
@@ -84,9 +85,35 @@ select {
   margin-inline: auto;
 }
 
+.section {
+  padding-block: 3em;
+}
+
+.clr-accent {
+  color: #fff068;
+}
+
+.clr-white {
+  color: #fff;
+}
+
+.title {
+  color: #fff;
+  font-size: 3.75rem;
+  font-size: clamp(3.75rem, 2.6rem + 5.34vw, 5.9375rem);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-block-end: 0.3em;
+}
+
 .header {
   padding-block: 2rem;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #03361f;
+  z-index: 1000;
 }
 .header__nav {
   display: flex;
@@ -184,6 +211,40 @@ select {
   font-size: 1.2rem;
   color: #fff;
   text-transform: uppercase;
+}
+
+.hero {
+  padding-block-start: 8rem;
+}
+.hero__cans {
+  position: relative;
+  z-index: 1;
+}
+.hero__figure {
+  width: 75%;
+}
+.hero__figure img {
+  object-fit: cover;
+}
+.hero__can1 {
+  translate: -20% 10%;
+}
+.hero__can2 {
+  position: absolute;
+  top: 0;
+  right: -15%;
+}
+.hero__plant {
+  width: 100%;
+  scale: -1;
+  translate: 0 -30%;
+  margin-block-end: -30%;
+}
+.hero__p {
+  font-size: 2.125rem;
+  font-size: clamp(2.125rem, 1.9rem + 0.9vw, 2.5rem);
+  text-transform: uppercase;
+  font-family: "MaisonNeue-Black", Helvetica, Arial, sans-serif;
 }
 
 /*# sourceMappingURL=main.css.map */

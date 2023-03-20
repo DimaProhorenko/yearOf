@@ -1,4 +1,27 @@
+@use '../abstracts/' as abs;
+
 .wrapper {
     width: 90%;
     margin-inline: auto;
+}
+
+.section {
+    padding-block: 3em;
+}
+
+.clr-accent {
+    color: abs.$brand-yellow;
+}
+
+.clr-white {
+    color: abs.$white;
+}
+
+.title {
+    color: abs.$white;
+    font-size: 3.75rem;
+    font-size: clamp(3.75rem, 2.6rem + 5.34vw, 5.9375rem);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-block-end: .3em;
 }
