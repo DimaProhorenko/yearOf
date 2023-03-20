@@ -1,0 +1,189 @@
+@font-face {
+  font-family: "MaisonNeue-Medium";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../assets/fonts/MaisonNeue-Medium/MaisonNeue-Medium.woff2"), url("../assets/fonts/MaisonNeue-Medium/MaisonNeue-Medium.woff"), url("../assets/fonts/MaisonNeue-Medium/MaisonNeue-Medium.ttf");
+}
+@font-face {
+  font-family: "MaisonNeue-Black";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../assets/fonts/MaisonNeue-Black/MaisonNeueExtendedWEB-Black.woff2");
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  font-size: 1rem;
+  font-family: "MaisonNeue-Medium", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: #fff068;
+  background-color: #03361f;
+  touch-action: manipulation;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "MaisonNeue-Black", Helvetica, Arial, sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.wrapper {
+  width: 90%;
+  margin-inline: auto;
+}
+
+.header {
+  padding-block: 2rem;
+  position: relative;
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+.header__menu {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  font-family: "MaisonNeue-Black", Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-inline-end: 1em;
+}
+.header__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  translate: 0 -100%;
+  background-color: #03361f;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2em 1em;
+  transition: translate 300ms cubic-bezier(0.73, 0.24, 0.68, 0.82) 300ms;
+}
+.header__overlay--open {
+  translate: 0;
+  transition: translate 300ms cubic-bezier(0.73, 0.24, 0.68, 0.82);
+}
+.header__overlay--open .header__link {
+  scale: 1 1;
+  transition: scale 300ms cubic-bezier(0.73, 0.24, 0.68, 0.82) 300ms;
+}
+.header__close {
+  outline: none;
+  border: none;
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.header__close::before, .header__close::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  translate: 0 -50%;
+}
+.header__close::before {
+  rotate: 45deg;
+}
+.header__close::after {
+  rotate: -45deg;
+}
+.header__list {
+  margin-block-start: 4em;
+}
+.header__list > *:not(:last-child) {
+  margin-bottom: 1em;
+}
+.header__link {
+  font-family: "MaisonNeue-Black", Helvetica, Arial, sans-serif;
+  font-size: 3em;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: inherit;
+  display: inline-block;
+  scale: 1 0;
+  transform-origin: top center;
+  transition: scale 300ms cubic-bezier(0.73, 0.24, 0.68, 0.82);
+}
+.header__sm {
+  margin-block-start: 8rem;
+}
+.header__sm .header__link {
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=main.css.map */

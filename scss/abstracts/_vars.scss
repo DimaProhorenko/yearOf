@@ -1,0 +1,17 @@
+@use './functions' as f;
+
+$black: #000;
+$white: #fff;
+$brand-green: #03361f;
+$brand-yellow: #fff068;
+$easing: cubic-bezier(0.73, 0.24, 0.68, 0.82);
+$timing: 300ms;
+$min-viewport: 20;
+$min-viewport-unit: 20rem;
+$max-viewport: 90;
+$content-width: 1376px;
+$content-max-width: f.toRem(1440);
+
+// Fonts
+$ff-medium: 'MaisonNeue-Medium', Helvetica, Arial, sans-serif;
+$ff-black: 'MaisonNeue-Black', Helvetica, Arial, sans-serif;

@@ -1,0 +1,117 @@
+@use '../abstracts/' as abs;
+
+.header {
+    padding-block: 2rem;
+    position: relative;
+
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &__menu {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        text-transform: uppercase;
+        color: inherit;
+        font-family: inherit;
+        line-height: inherit;
+        cursor: pointer;
+        font-family: abs.$ff-black;
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: .06em;
+        margin-inline-end: 1em;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100vh;
+        translate: 0 -100%;
+        background-color: abs.$brand-green;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 2em 1em;
+        transition: translate abs.$timing abs.$easing abs.$timing;
+
+        &--open {
+            translate: 0;
+            transition: translate abs.$timing abs.$easing;
+
+            .header__link {
+                scale: 1 1;
+                transition: scale abs.$timing abs.$easing abs.$timing;
+            }
+        }
+    }
+
+
+    &__close {
+        outline: none;
+        border: none;
+        display: inline-block;
+        width: abs.toRem(40);
+        height: abs.toRem(40);
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background-color: abs.$white;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            translate: 0 -50%;
+        }
+
+        &::before {
+            rotate: 45deg;
+        }
+
+        &::after {
+            rotate: -45deg;
+        }
+    }
+
+    &__list {
+        margin-block-start: 4em;
+        & > *:not(:last-child) {
+            margin-bottom: 1em;
+        }
+    }
+
+    &__link {
+        font-family: abs.$ff-black;
+        font-size: 3em;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: inherit;
+        display: inline-block;
+        scale: 1 0;
+        transform-origin: top center;
+        transition: scale abs.$timing abs.$easing;
+    }
+
+    &__sm {
+        margin-block-start: 8rem;
+        .header__link {
+            font-size: 1.2rem;
+            color: abs.$white;
+            text-transform: uppercase;
+        }
+    }
+}
